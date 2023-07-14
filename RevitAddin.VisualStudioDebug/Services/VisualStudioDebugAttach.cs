@@ -4,12 +4,12 @@ using System.Diagnostics;
 namespace RevitAddin.VisualStudioDebug.Services
 {
     [DebuggerStepThrough]
-    public class VisualStudioAttach : IDisposable
+    public class VisualStudioDebugAttach : IDisposable
     {
         private Process process;
         private bool IsDebuggerAttached;
 
-        public VisualStudioAttach(Process process = null)
+        public VisualStudioDebugAttach(Process process = null)
         {
             IsDebuggerAttached = VisualStudioDebugUtils.IsDebuggerAttached;
             VisualStudioDebugUtils.IsDebuggerAttached = true;

@@ -14,10 +14,9 @@ namespace RevitAddin.VisualStudioDebug.Revit.Commands
         {
             UIApplication uiapp = commandData.Application;
 
-            using (new VisualStudioAttach())
+            using (new VisualStudioDebugAttach())
             {
                 Console.WriteLine(uiapp);
-                //System.Windows.MessageBox.Show(uiapp.Application.VersionName);
             }
 
             return Result.Succeeded;

@@ -25,7 +25,7 @@ namespace RevitAddin.VisualStudioDebug.Services
             {
                 var processDTE = process.GetProcessDTE(dte);
                 processDTE?.Attach();
-                Debug.WriteLine($"DTE.Debugger.Attach[{process.Id}]: {dte?.Name} {dte?.Version}");
+                //Debug.WriteLine($"DTE.Debugger.Attach[{process.Id}]: {dte?.Name} {dte?.Version}");
             }
             catch { }
             return process;
@@ -39,7 +39,7 @@ namespace RevitAddin.VisualStudioDebug.Services
             {
                 var processDTE = process.GetProcessDTE(dte);
                 processDTE?.Detach(false);
-                Debug.WriteLine($"DTE.Debugger.Detach[{process.Id}]: {dte?.Name} {dte?.Version}");
+                //Debug.WriteLine($"DTE.Debugger.Detach[{process.Id}]: {dte?.Name} {dte?.Version}");
             }
             catch { }
             return process;
@@ -60,7 +60,7 @@ namespace RevitAddin.VisualStudioDebug.Services
                     var dte = (DTE)System.Runtime.InteropServices.Marshal.GetActiveObject(objectDTE);
                     if (dte is not null)
                     {
-                        Debug.WriteLine($"DTE.Debugger: {objectDTE}");
+                        //Debug.WriteLine($"DTE.Debugger: {objectDTE}");
                         return dte;
                     }
                 }

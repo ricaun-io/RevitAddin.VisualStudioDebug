@@ -11,7 +11,7 @@ namespace RevitAddin.VisualStudioDebug.Revit
         private static RibbonPanel ribbonPanel;
         public Result OnStartup(UIControlledApplication application)
         {
-            ribbonPanel = application.CreatePanel("RevitAddin.VisualStudioDebug");
+            ribbonPanel = application.CreatePanel("VisualStudioDebug");
             ribbonPanel.CreatePushButton<Commands.Command>()
                 .SetLargeImage(Properties.Resources.Revit.GetBitmapSource());
             return Result.Succeeded;
