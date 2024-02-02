@@ -13,7 +13,7 @@ namespace RevitAddin.VisualStudioDebug.Services
     [DebuggerStepThrough]
     public static class VisualStudioDebugUtils
     {
-        public static DTE DTE { get; set; } = GetDTE();
+        public static DTE DTE => GetDTE();
 
         public static bool IsDebuggerAttached { get; set; } = System.Diagnostics.Debugger.IsAttached;
 
