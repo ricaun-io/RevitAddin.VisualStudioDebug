@@ -124,6 +124,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\About-Dark.ico" />
+    <None Remove="Resources\About-Light.ico" />
+    <None Remove="Resources\Pause-Dark.ico" />
+    <None Remove="Resources\Pause-Light.ico" />
+    <None Remove="Resources\Play-Dark.ico" />
+    <None Remove="Resources\Play-Light.ico" />
+    <None Remove="Resources\Stop-Dark.ico" />
+    <None Remove="Resources\Stop-Light.ico" />
+    <None Remove="Resources\User-Dark.ico" />
+    <None Remove="Resources\User-Light.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="ricaun.Revit.UI" Version="*" />
     <PackageReference Include="ricaun.Revit.Mvvm" Version="*" />
     <PackageReference Include="Microsoft.VisualStudio.Interop" Version="*" />
@@ -152,6 +165,19 @@
 
   <ItemGroup>
     <PackageReference Include="Revit_All_Main_Versions_API_x64" Version="$(RevitVersion).*" IncludeAssets="build; compile" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\About-Dark.ico" />
+    <Resource Include="Resources\About-Light.ico" />
+    <Resource Include="Resources\Pause-Dark.ico" />
+    <Resource Include="Resources\Pause-Light.ico" />
+    <Resource Include="Resources\Play-Dark.ico" />
+    <Resource Include="Resources\Play-Light.ico" />
+    <Resource Include="Resources\Stop-Dark.ico" />
+    <Resource Include="Resources\Stop-Light.ico" />
+    <Resource Include="Resources\User-Dark.ico" />
+    <Resource Include="Resources\User-Light.ico" />
   </ItemGroup>
 
   <ItemGroup>
