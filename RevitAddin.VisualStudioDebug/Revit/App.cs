@@ -25,10 +25,18 @@ namespace RevitAddin.VisualStudioDebug.Revit
 
             //ribbonPanel.SetDialogLauncher(button);
 
+            var startButton = ribbonPanel.CreatePushButton<CommandPlay>("Start")
+                .SetLargeImage("Resources/Play-Light.ico")
+                .SetToolTip("Start Debugging using Visual Studio process.");
+
+            var stopButton = ribbonPanel.CreatePushButton<CommandStop>("Stop")
+                .SetLargeImage("Resources/Stop-Light.ico")
+                .SetToolTip("Stop Debugging using Visual Studio process.");
+
             ribbonPanel.RowStackedItems(
-                ribbonPanel.CreatePushButton<CommandPlay>("Start").SetLargeImage("Resources/Play-Light.ico"),
+                startButton,
                 //ribbonPanel.CreatePushButton<CommandPause>("Pause").SetLargeImage("Resources/Pause-Light.ico"),
-                ribbonPanel.CreatePushButton<CommandStop>("Stop").SetLargeImage("Resources/Stop-Light.ico")
+                stopButton
             );
 
             return Result.Succeeded;
