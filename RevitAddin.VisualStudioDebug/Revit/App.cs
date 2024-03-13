@@ -30,7 +30,7 @@ namespace RevitAddin.VisualStudioDebug.Revit
                 .SetToolTip("Start Debugging using Visual Studio process.");
 
             var eventButton = ribbonPanel.CreatePushButton<CommandEvent>("Event")
-                .SetLargeImage("Resources/Pause-Light.ico")
+                .SetLargeImage("Resources/Event-Light.ico")
                 .SetToolTip("Start Debugging using Visual Studio process when AssemblyLoad event happen.");
 
             var stopButton = ribbonPanel.CreatePushButton<CommandStop>("Stop")
