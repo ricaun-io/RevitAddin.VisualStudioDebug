@@ -29,23 +29,50 @@ namespace RevitAddin.VisualStudioDebug.Revit
                 .SetLargeImage("Resources/Play-Light.ico")
                 .SetToolTip("Start Debugging using Visual Studio process.");
 
+            var eventButton = ribbonPanel.CreatePushButton<CommandEvent>("Event")
+                .SetLargeImage("Resources/Pause-Light.ico")
+                .SetToolTip("Start Debugging using Visual Studio process when AssemblyLoad event happen.");
+
             var stopButton = ribbonPanel.CreatePushButton<CommandStop>("Stop")
                 .SetLargeImage("Resources/Stop-Light.ico")
                 .SetToolTip("Stop Debugging using Visual Studio process.");
 
             ribbonPanel.RowStackedItems(
                 startButton,
+                eventButton,
                 //ribbonPanel.CreatePushButton<CommandPause>("Pause").SetLargeImage("Resources/Pause-Light.ico"),
                 stopButton
             );
 
+            AppDomain.CurrentDomain.AssemblyLoad += CurrentDomain_AssemblyLoad;
+
             return Result.Succeeded;
+        }
+
+        private void CurrentDomain_AssemblyLoad(object sender, AssemblyLoadEventArgs args)
+        {
+            if (EventLoad)
+            {
+                EventLoad = false;
+                visualStudioDebugAttach?.Dispose();
+                visualStudioDebugAttach = new VisualStudioDebugAttach();
+            }
+        }
+
+        private static bool EventLoad;
+
+        private static void EventMonitor()
+        {
+            EventLoad = !EventLoad;
         }
 
         public Result OnShutdown(UIControlledApplication application)
         {
             ribbonPanel?.Remove();
             visualStudioDebugAttach?.Dispose();
+
+            AppDomain.CurrentDomain.AssemblyLoad -= CurrentDomain_AssemblyLoad;
+
             return Result.Succeeded;
         }
 
@@ -58,6 +85,24 @@ namespace RevitAddin.VisualStudioDebug.Revit
                 UIApplication uiapp = commandData.Application;
                 visualStudioDebugAttach?.Dispose();
                 visualStudioDebugAttach = new VisualStudioDebugAttach();
+
+                return Result.Succeeded;
+            }
+
+            public bool IsCommandAvailable(UIApplication applicationData, CategorySet selectedCategories)
+            {
+                return System.Diagnostics.Debugger.IsAttached == false && EventLoad == false;
+            }
+        }
+
+        [Transaction(TransactionMode.Manual)]
+        public class CommandEvent : IExternalCommand, IExternalCommandAvailability
+        {
+            public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elementSet)
+            {
+                UIApplication uiapp = commandData.Application;
+
+                EventMonitor();
 
                 return Result.Succeeded;
             }
