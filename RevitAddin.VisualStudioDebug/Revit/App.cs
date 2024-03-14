@@ -59,6 +59,7 @@ namespace RevitAddin.VisualStudioDebug.Revit
                 EventLoad = false;
                 visualStudioDebugAttach?.Dispose();
                 visualStudioDebugAttach = new VisualStudioDebugAttach();
+                UpdateButtonEventImage();
             }
         }
 
@@ -67,6 +68,11 @@ namespace RevitAddin.VisualStudioDebug.Revit
         private static void EventMonitor()
         {
             EventLoad = !EventLoad;
+            UpdateButtonEventImage();
+        }
+
+        private static void UpdateButtonEventImage()
+        {
             if (EventLoad)
             {
                 ribbonEventButton?.SetLargeImage("Resources/Event-Stop-Light.ico");
