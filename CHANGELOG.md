@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.1.0] / 2024-03-13
 - Add event feature
+- Update Event images.
 
 ## [1.0.0] / 2024-02-01
 - Add Icons

@@ -94,6 +94,8 @@
     <None Remove="Resources\About-Light.ico" />
     <None Remove="Resources\Event-Dark.ico" />
     <None Remove="Resources\Event-Light.ico" />
+    <None Remove="Resources\Event-Stop-Dark.ico" />
+    <None Remove="Resources\Event-Stop-Light.ico" />
     <None Remove="Resources\Pause-Dark.ico" />
     <None Remove="Resources\Pause-Light.ico" />
     <None Remove="Resources\Play-Dark.ico" />
@@ -118,6 +120,8 @@
   <ItemGroup>
     <Resource Include="Resources\Event-Dark.ico" />
     <Resource Include="Resources\Event-Light.ico" />
+    <Resource Include="Resources\Event-Stop-Dark.ico" />
+    <Resource Include="Resources\Event-Stop-Light.ico" />
     <Resource Include="Resources\Revit.ico" />
   </ItemGroup>
 

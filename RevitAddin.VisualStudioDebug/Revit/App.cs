@@ -13,6 +13,7 @@ namespace RevitAddin.VisualStudioDebug.Revit
     {
         private static RibbonPanel ribbonPanel;
         private static VisualStudioDebugAttach visualStudioDebugAttach;
+        private static RibbonButton ribbonEventButton;
         public Result OnStartup(UIControlledApplication application)
         {
             //Console.WriteLine(application);
@@ -44,6 +45,8 @@ namespace RevitAddin.VisualStudioDebug.Revit
                 stopButton
             );
 
+            ribbonEventButton = eventButton;
+
             AppDomain.CurrentDomain.AssemblyLoad += CurrentDomain_AssemblyLoad;
 
             return Result.Succeeded;
@@ -64,6 +67,14 @@ namespace RevitAddin.VisualStudioDebug.Revit
         private static void EventMonitor()
         {
             EventLoad = !EventLoad;
+            if (EventLoad)
+            {
+                ribbonEventButton?.SetLargeImage("Resources/Event-Stop-Light.ico");
+            }
+            else
+            {
+                ribbonEventButton?.SetLargeImage("Resources/Event-Light.ico");
+            }
         }
 
         public Result OnShutdown(UIControlledApplication application)
