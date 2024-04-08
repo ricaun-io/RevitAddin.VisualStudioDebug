@@ -11,6 +11,7 @@ namespace RevitAddin.VisualStudioDebug.Revit
     [AppLoader]
     public class App : IExternalApplication
     {
+        const string ContextualHelpUrl = "https://github.com/ricaun-io/RevitAddin.VisualStudioDebug";
         private static RibbonPanel ribbonPanel;
         private static VisualStudioDebugAttach visualStudioDebugAttach;
         private static RibbonButton ribbonEventButton;
@@ -28,20 +29,22 @@ namespace RevitAddin.VisualStudioDebug.Revit
 
             var startButton = ribbonPanel.CreatePushButton<CommandPlay>("Start")
                 .SetLargeImage("Resources/Play-Light.ico")
-                .SetToolTip("Start Debugging using Visual Studio process.");
+                .SetToolTip("Start Debugging using Visual Studio process.")
+                .SetContextualHelp(ContextualHelpUrl);
 
             var eventButton = ribbonPanel.CreatePushButton<CommandEvent>("Event")
                 .SetLargeImage("Resources/Event-Light.ico")
-                .SetToolTip("Start Debugging using Visual Studio process when AssemblyLoad event happen.");
+                .SetToolTip("Start Debugging using Visual Studio process when an assembly is loaded in the AppDomain.")
+                .SetContextualHelp(ContextualHelpUrl);
 
             var stopButton = ribbonPanel.CreatePushButton<CommandStop>("Stop")
                 .SetLargeImage("Resources/Stop-Light.ico")
-                .SetToolTip("Stop Debugging using Visual Studio process.");
+                .SetToolTip("Stop Debugging using Visual Studio process.")
+                .SetContextualHelp(ContextualHelpUrl);
 
             ribbonPanel.RowStackedItems(
                 startButton,
                 eventButton,
-                //ribbonPanel.CreatePushButton<CommandPause>("Pause").SetLargeImage("Resources/Pause-Light.ico"),
                 stopButton
             );
 
