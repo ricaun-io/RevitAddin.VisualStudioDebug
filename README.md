@@ -26,7 +26,7 @@ In the `Add-Ins` tab the panel `Debug` is created with three buttons `Start`, `E
 
 ## License
 
-This project is [licensed](LICENSE) under the [MIT Licence](https://en.wikipedia.org/wiki/MIT_License).
+This project is [licensed](LICENSE) under the [MIT License](https://en.wikipedia.org/wiki/MIT_License).
 
 ---
 
