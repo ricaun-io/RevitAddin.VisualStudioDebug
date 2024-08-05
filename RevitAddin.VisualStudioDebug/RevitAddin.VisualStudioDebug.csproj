@@ -22,12 +22,22 @@
 
   <!-- RevitVersion -->
   <PropertyGroup>
-    <TargetFrameworks>net46;net8.0-windows</TargetFrameworks>
+    <TargetFrameworks>net46;net47;net48;net8.0-windows</TargetFrameworks>
   </PropertyGroup>
   <Choose>
-    <When Condition="$(TargetFramework.StartsWith('net4'))">
+    <When Condition="$(TargetFramework.StartsWith('net46'))">
       <PropertyGroup>
         <RevitVersion>2017</RevitVersion>
+      </PropertyGroup>
+    </When>
+    <When Condition="$(TargetFramework.StartsWith('net47'))">
+      <PropertyGroup>
+        <RevitVersion>2019</RevitVersion>
+      </PropertyGroup>
+    </When>
+    <When Condition="$(TargetFramework.StartsWith('net48'))">
+      <PropertyGroup>
+        <RevitVersion>2021</RevitVersion>
       </PropertyGroup>
     </When>
     <Otherwise>
@@ -63,7 +73,7 @@
 
   <PropertyGroup>
     <PackageId>RevitAddin.VisualStudioDebug</PackageId>
-    <Version>1.2.0</Version>
+    <Version>1.2.1</Version>
     <ProjectGuid>{C917B240-4C2B-431A-BB03-730BE9802F25}</ProjectGuid>
   </PropertyGroup>
 
