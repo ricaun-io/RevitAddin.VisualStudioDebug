@@ -73,7 +73,7 @@
 
   <PropertyGroup>
     <PackageId>RevitAddin.VisualStudioDebug</PackageId>
-    <Version>1.2.1</Version>
+    <Version>1.2.2</Version>
     <ProjectGuid>{C917B240-4C2B-431A-BB03-730BE9802F25}</ProjectGuid>
   </PropertyGroup>
 
@@ -103,17 +103,25 @@
     <None Remove="Resources\About-Dark.ico" />
     <None Remove="Resources\About-Light.ico" />
     <None Remove="Resources\Event-Dark.ico" />
+    <None Remove="Resources\Event-Dark.tiff" />
     <None Remove="Resources\Event-Light.ico" />
+    <None Remove="Resources\Event-Light.tiff" />
     <None Remove="Resources\Event-Stop-Dark.ico" />
+    <None Remove="Resources\Event-Stop-Dark.tiff" />
     <None Remove="Resources\Event-Stop-Light.ico" />
+    <None Remove="Resources\Event-Stop-Light.tiff" />
     <None Remove="Resources\Pause-Dark.ico" />
+    <None Remove="Resources\Pause-Dark.tiff" />
     <None Remove="Resources\Pause-Light.ico" />
+    <None Remove="Resources\Pause-Light.tiff" />
     <None Remove="Resources\Play-Dark.ico" />
+    <None Remove="Resources\Play-Dark.tiff" />
     <None Remove="Resources\Play-Light.ico" />
+    <None Remove="Resources\Play-Light.tiff" />
     <None Remove="Resources\Stop-Dark.ico" />
+    <None Remove="Resources\Stop-Dark.tiff" />
     <None Remove="Resources\Stop-Light.ico" />
-    <None Remove="Resources\User-Dark.ico" />
-    <None Remove="Resources\User-Light.ico" />
+    <None Remove="Resources\Stop-Light.tiff" />
   </ItemGroup>
 
   <ItemGroup>
@@ -129,9 +137,17 @@
 
   <ItemGroup>
     <Resource Include="Resources\Event-Dark.ico" />
+    <Resource Include="Resources\Event-Dark.tiff" />
     <Resource Include="Resources\Event-Light.ico" />
+    <Resource Include="Resources\Event-Light.tiff" />
     <Resource Include="Resources\Event-Stop-Dark.ico" />
+    <Resource Include="Resources\Event-Stop-Dark.tiff" />
     <Resource Include="Resources\Event-Stop-Light.ico" />
+    <Resource Include="Resources\Event-Stop-Light.tiff" />
+    <Resource Include="Resources\Pause-Dark.tiff" />
+    <Resource Include="Resources\Pause-Light.tiff" />
+    <Resource Include="Resources\Play-Dark.tiff" />
+    <Resource Include="Resources\Play-Light.tiff" />
     <Resource Include="Resources\Revit.ico" />
   </ItemGroup>
 
@@ -152,16 +168,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\About-Dark.ico" />
-    <Resource Include="Resources\About-Light.ico" />
     <Resource Include="Resources\Pause-Dark.ico" />
     <Resource Include="Resources\Pause-Light.ico" />
     <Resource Include="Resources\Play-Dark.ico" />
     <Resource Include="Resources\Play-Light.ico" />
     <Resource Include="Resources\Stop-Dark.ico" />
+    <Resource Include="Resources\Stop-Dark.tiff" />
     <Resource Include="Resources\Stop-Light.ico" />
-    <Resource Include="Resources\User-Dark.ico" />
-    <Resource Include="Resources\User-Light.ico" />
+    <Resource Include="Resources\Stop-Light.tiff" />
   </ItemGroup>
 
   <ItemGroup>
