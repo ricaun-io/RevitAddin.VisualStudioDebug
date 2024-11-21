@@ -28,17 +28,17 @@ namespace RevitAddin.VisualStudioDebug.Revit
             //ribbonPanel.SetDialogLauncher(button);
 
             var startButton = ribbonPanel.CreatePushButton<CommandPlay>("Start")
-                .SetLargeImage("Resources/Play-Light.ico")
+                .SetLargeImage("Resources/Play-Light.tiff")
                 .SetToolTip("Start Debugging using Visual Studio process.")
                 .SetContextualHelp(ContextualHelpUrl);
 
             var eventButton = ribbonPanel.CreatePushButton<CommandEvent>("Event")
-                .SetLargeImage("Resources/Event-Light.ico")
+                .SetLargeImage("Resources/Event-Light.tiff")
                 .SetToolTip("Start Debugging using Visual Studio process when an assembly is loaded in the AppDomain.")
                 .SetContextualHelp(ContextualHelpUrl);
 
             var stopButton = ribbonPanel.CreatePushButton<CommandStop>("Stop")
-                .SetLargeImage("Resources/Stop-Light.ico")
+                .SetLargeImage("Resources/Stop-Light.tiff")
                 .SetToolTip("Stop Debugging using Visual Studio process.")
                 .SetContextualHelp(ContextualHelpUrl);
 
@@ -78,11 +78,11 @@ namespace RevitAddin.VisualStudioDebug.Revit
         {
             if (EventLoad)
             {
-                ribbonEventButton?.SetLargeImage("Resources/Event-Stop-Light.ico");
+                ribbonEventButton?.SetLargeImage("Resources/Event-Stop-Light.tiff");
             }
             else
             {
-                ribbonEventButton?.SetLargeImage("Resources/Event-Light.ico");
+                ribbonEventButton?.SetLargeImage("Resources/Event-Light.tiff");
             }
         }
 
