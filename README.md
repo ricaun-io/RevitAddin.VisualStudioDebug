@@ -25,6 +25,10 @@ In the `Add-Ins` tab the panel `Debug` is created with three buttons `Start`, `E
 ## Installation
 
 * Download and install [RevitAddin.VisualStudioDebug.exe](../../releases/latest/download/RevitAddin.VisualStudioDebug.zip)
+* Or install bundle using [AppBundleTool](https://github.com/ricaun-io/ricaun.AppBundleTool) using the following command:
+```shell
+AppBundleTool -a https://github.com/ricaun-io/RevitAddin.VisualStudioDebug/releases/latest/download/RevitAddin.VisualStudioDebug.bundle.zip -i
+```
 
 ## License
 
