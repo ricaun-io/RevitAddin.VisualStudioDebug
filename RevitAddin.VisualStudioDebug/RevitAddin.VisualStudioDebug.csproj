@@ -22,7 +22,7 @@
 
   <!-- RevitVersion -->
   <PropertyGroup>
-    <TargetFrameworks>net46;net47;net48;net8.0-windows</TargetFrameworks>
+    <TargetFrameworks>net46;net47;net48;net8.0-windows;net10.0-windows</TargetFrameworks>
   </PropertyGroup>
   <Choose>
     <When Condition="$(TargetFramework.StartsWith('net46'))">
@@ -38,6 +38,16 @@
     <When Condition="$(TargetFramework.StartsWith('net48'))">
       <PropertyGroup>
         <RevitVersion>2021</RevitVersion>
+      </PropertyGroup>
+    </When>
+    <When Condition="$(TargetFramework.StartsWith('net8'))">
+      <PropertyGroup>
+        <RevitVersion>2025</RevitVersion>
+      </PropertyGroup>
+    </When>
+    <When Condition="$(TargetFramework.StartsWith('net10'))">
+      <PropertyGroup>
+        <RevitVersion>2027</RevitVersion>
       </PropertyGroup>
     </When>
     <Otherwise>
@@ -73,7 +83,6 @@
 
   <PropertyGroup>
     <PackageId>RevitAddin.VisualStudioDebug</PackageId>
-    <Version>1.2.2</Version>
     <ProjectGuid>{C917B240-4C2B-431A-BB03-730BE9802F25}</ProjectGuid>
   </PropertyGroup>
 
@@ -126,8 +135,11 @@
 
   <ItemGroup>
     <PackageReference Include="ricaun.Revit.UI" Version="*" />
-    <PackageReference Include="ricaun.Revit.Mvvm" Version="*" />
     <PackageReference Include="Microsoft.VisualStudio.Interop" Version="*" />
+    <PackageReference Include="ricaun.Revit.Github" Version="*" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.*" IncludeAssets="build; compile" PrivateAssets="All">
+      <NoWarn>NU1903</NoWarn>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
@@ -150,18 +162,6 @@
     <Resource Include="Resources\Play-Light.tiff" />
     <Resource Include="Resources\Revit.ico" />
   </ItemGroup>
-
-  <!-- Fody -->
-  <ItemGroup>
-    <PackageReference Include="PropertyChanged.Fody" Version="3.*" IncludeAssets="build; compile" PrivateAssets="all" />
-  </ItemGroup>
-  <PropertyGroup>
-    <WeaverConfiguration>
-      <Weavers>
-        <PropertyChanged />
-      </Weavers>
-    </WeaverConfiguration>
-  </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Revit_All_Main_Versions_API_x64" Version="$(RevitVersion).*-*" IncludeAssets="build; compile" PrivateAssets="All" />
