@@ -135,8 +135,11 @@
 
   <ItemGroup>
     <PackageReference Include="ricaun.Revit.UI" Version="*" />
-    <PackageReference Include="ricaun.Revit.Mvvm" Version="*" />
     <PackageReference Include="Microsoft.VisualStudio.Interop" Version="*" />
+    <PackageReference Include="ricaun.Revit.Github" Version="*" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.*" IncludeAssets="build; compile" PrivateAssets="All">
+      <NoWarn>NU1903</NoWarn>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
@@ -159,18 +162,6 @@
     <Resource Include="Resources\Play-Light.tiff" />
     <Resource Include="Resources\Revit.ico" />
   </ItemGroup>
-
-  <!-- Fody -->
-  <ItemGroup>
-    <PackageReference Include="PropertyChanged.Fody" Version="3.*" IncludeAssets="build; compile" PrivateAssets="all" />
-  </ItemGroup>
-  <PropertyGroup>
-    <WeaverConfiguration>
-      <Weavers>
-        <PropertyChanged />
-      </Weavers>
-    </WeaverConfiguration>
-  </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Revit_All_Main_Versions_API_x64" Version="$(RevitVersion).*-*" IncludeAssets="build; compile" PrivateAssets="All" />

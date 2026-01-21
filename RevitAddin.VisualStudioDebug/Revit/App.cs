@@ -52,6 +52,8 @@ namespace RevitAddin.VisualStudioDebug.Revit
 
             AppDomain.CurrentDomain.AssemblyLoad += CurrentDomain_AssemblyLoad;
 
+            BundleGithubUpdater.RunUpdate();
+
             return Result.Succeeded;
         }
 

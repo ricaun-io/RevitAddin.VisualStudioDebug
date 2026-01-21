@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [1.3.0] / 2025-01-21
 ### Features
 - Support `net10` for Revit 2027.
+- AutoUpdate bundle using `ricaun.Revit.Github` package.
+### Updates
+- Add `BundleGithubUpdater` to auto update bundle from GitHub releases.
 
 ## [1.2.2] / 2024-11-21
 - Update icons to `.tiff`.
